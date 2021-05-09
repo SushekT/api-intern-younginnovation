@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Data||Young Innovation</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+<h6><a href="{% url 'product_sales_by_country' %}">3. List overall sale of each petroleam product by country. Note: Do not count zero during average calulation</a>
+</h6>
+<h6><a href="{% url 'two_years' %}">4. List average sale of each petroleum product for 2 years of interval</a>
+</h6>
+<h6><a href="{% url 'leastsale' %}">5. At which year each petroleum product had the least sale. Note: Do not count zero as least sale</a></h6>
+<div class="container">
+    <table class="table">
+    <thead>
+      <tr>
+        <th>Product</th>
+        <th>Year</th>
+        <th>Sale</th>
+        <th>Country</th>
+      </tr>
+    </thead>
+    <tbody>
+    {% for d in datas %}
+        <tr>
+            <td>{{d.petroleum}}</td>
+            <td>{{d.year.number}}</td>
+            <td>{{d.sale}}</td>
+            <td>{{d.country}}</td>
+        </tr>
+     {% endfor %}
+    </tbody>
+  </table>
+</div>
+
+</body>
+</html>
+</body>
+</html>
